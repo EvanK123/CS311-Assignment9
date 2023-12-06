@@ -1,6 +1,5 @@
 
 #include "graph.h"
-using namespace std;
 
 int main(int argc, char * argv[])
 {
@@ -45,7 +44,6 @@ int main(int argc, char * argv[])
     int tempfromCity = 0, temptoCity = 0, tempdistance = 0;
     // Read road data
     while (!roadFile.eof()) {
-        // just to be safe
         // tempfromCity = 0, temptoCity = 0, tempdistance = 0; this actually causes errors dont do this 
         // Every road is identified by the cities (city #) it connects and the distance 
         roadFile >> tempfromCity >> temptoCity >> tempdistance;
@@ -86,4 +84,6 @@ int main(int argc, char * argv[])
     cout << "----------------------------------------------------------------" << endl;
     cout << "From City: " << citymap[fromCityCode].cityName << ", Population " << citymap[fromCityCode].population << ", Elevation " << citymap[fromCityCode].elevation << endl;
     cout << "To City: " << citymap[toCityCode].cityName << ", Population " << citymap[toCityCode].population << ", Elevation " << citymap[toCityCode].elevation << endl;
+
+    /* TODO: ShortestRoute Implementation */
 }
