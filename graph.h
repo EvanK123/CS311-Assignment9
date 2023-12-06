@@ -52,8 +52,8 @@ struct Road {
 class Graph
 {
 public:
-    int numCities;            // No. of vertices
-    vector<City> cities; // The list of vertices
+    int numCities;            // No. of cities
+    vector<City> cities; // The list of cities
     vector<vector<Road>> adjList; // The adjacency list
     unordered_map<string, City> citymap;    
     

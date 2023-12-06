@@ -57,6 +57,7 @@ int main(int argc, char * argv[])
 
         graph.addRoad(tempfromCity, temptoCity, tempdistance);
         // if you wanted to add bidirectional roads, switching toCity and fromCity would technically do that
+        
         //cout << tempfromCity << " " << temptoCity << " " << tempdistance << endl; //just using this for debug purposes
     }
     roadFile.close();
