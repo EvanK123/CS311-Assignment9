@@ -86,7 +86,7 @@ int main(int argc, char * argv[])
     City toCity = citymap[toCityCode];
 
 
-    cout << "Author: x, xx and xxx" << endl;
+    cout << "Author: Evan, Matthew and Kyle" << endl;
     cout << "Date: 11/27/2023" << endl;
     cout << "Course: CS311 (Data structures and Algorithms)" << endl;
     cout << "Description: Program to find the shortest route between cities" << endl;
