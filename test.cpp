@@ -60,14 +60,8 @@ int main(int argc, char * argv[])
         //cout << tempfromCity << " " << temptoCity << " " << tempdistance << endl; //just using this for debug purposes
     }
     roadFile.close();
-
-    // close both files
-    
     
 
-    // debug testing
-    //graph.printGraph();
-    
 
     if(citymap.find(fromCityCode) == citymap.end())
     {
@@ -91,8 +85,8 @@ int main(int argc, char * argv[])
     cout << "Course: CS311 (Data structures and Algorithms)" << endl;
     cout << "Description: Program to find the shortest route between cities" << endl;
     cout << "----------------------------------------------------------------" << endl;
-    cout << "From City: " << citymap[fromCityCode].cityName << ", Population " << fromCity.population << ", Elevation " << fromCity.elevation << endl;
-    cout << "To City: " << citymap[toCityCode].cityName << ", Population " << toCity.population << ", Elevation " << toCity.elevation << endl;
+    cout << "From City: " << fromCity.cityName << ", Population " << fromCity.population << ", Elevation " << fromCity.elevation << endl;
+    cout << "To City: " << toCity.cityName << ", Population " << toCity.population << ", Elevation " << toCity.elevation << endl;
 
     /* TODO: ShortestRoute Implementation */
 }
