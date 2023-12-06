@@ -6,6 +6,9 @@
 #include <iostream>
 #include <unordered_map>
 #include <fstream>
+#include <set>
+#include <limits>
+#include <algorithm>
 using namespace std;
 
 /**
@@ -104,4 +107,6 @@ public:
       * @brief Print the graph
       */
     void printGraph();
+
+    bool shortRoute(string fromCityCode, string toCityCode, int &shortestDistance, vector<string> &shortestRoute);
 };
