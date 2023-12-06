@@ -19,8 +19,8 @@ Graph::~Graph()
 }
 
 /*
- * Add a vertex to the graph.
- * @param v The vertex to be added.
+ * Add a city to the graph.
+ * @param v The city to be added.
  */
 void Graph::addCity(City c)
 {
@@ -44,8 +44,8 @@ void Graph::addRoad(int fromCity, int toCity, int distance)
 
 /*
  * Get the number of outgoing roads from a city.
- * @param v The vertex to check.
- * @return The number of outgoing edges from the vertex.
+ * @param v The road to check.
+ * @return The number of outgoing roads from the city.
  */
 int Graph::outDegree(int c)
 {

@@ -12,12 +12,18 @@ int main(int argc, char * argv[])
     string fromCityCode = argv[1];
     string toCityCode = argv[2];
 
-    // open both files
+    // open city file
     ifstream cityFile("city.txt");
-    ifstream roadFile("road.txt");
+    if (!cityFile.is_open()) {
+        cerr << "Error opening city file." << endl;
+        return 1;
+    }
 
-    if (!cityFile.is_open() || !roadFile.is_open()) {
-        cerr << "Error opening input files." << endl;
+    // open road file
+    ifstream roadFile("road.txt");
+    if(!roadFile.is_open())
+    {
+        cerr << "Error opening road file." << endl;
         return 1;
     }
 
@@ -27,8 +33,7 @@ int main(int argc, char * argv[])
    
     //CityCode, CityID, CityName, CityPopulation, CityElevation
 
-    // no clue if this works i'm kinda lazy to test atm
-    // Read city data
+    // read city data until end of file
     while (!cityFile.eof()) {
         City city;
         // Every city is identified by a number, code, name, population, and elevation
@@ -38,7 +43,7 @@ int main(int argc, char * argv[])
         graph.addCity(city); 
         //cout << city.id << " " << city.cityCode << " " << city.cityName << " " << city.population << " " << city.elevation << endl;
     }
-
+    cityFile.close();
     
 
     int tempfromCity = 0, temptoCity = 0, tempdistance = 0;
@@ -54,11 +59,11 @@ int main(int argc, char * argv[])
         // if you wanted to add bidirectional roads, switching toCity and fromCity would technically do that
         //cout << tempfromCity << " " << temptoCity << " " << tempdistance << endl; //just using this for debug purposes
     }
-
+    roadFile.close();
 
     // close both files
-    cityFile.close();
-    roadFile.close();
+    
+    
 
     // debug testing
     //graph.printGraph();
@@ -77,13 +82,17 @@ int main(int argc, char * argv[])
         return 1;
     }
 
+    City fromCity = citymap[fromCityCode];
+    City toCity = citymap[toCityCode];
+
+
     cout << "Author: x, xx and xxx" << endl;
     cout << "Date: 11/27/2023" << endl;
     cout << "Course: CS311 (Data structures and Algorithms)" << endl;
     cout << "Description: Program to find the shortest route between cities" << endl;
     cout << "----------------------------------------------------------------" << endl;
-    cout << "From City: " << citymap[fromCityCode].cityName << ", Population " << citymap[fromCityCode].population << ", Elevation " << citymap[fromCityCode].elevation << endl;
-    cout << "To City: " << citymap[toCityCode].cityName << ", Population " << citymap[toCityCode].population << ", Elevation " << citymap[toCityCode].elevation << endl;
+    cout << "From City: " << citymap[fromCityCode].cityName << ", Population " << fromCity.population << ", Elevation " << fromCity.elevation << endl;
+    cout << "To City: " << citymap[toCityCode].cityName << ", Population " << toCity.population << ", Elevation " << toCity.elevation << endl;
 
     /* TODO: ShortestRoute Implementation */
 }
